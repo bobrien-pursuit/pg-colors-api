@@ -13,5 +13,11 @@ app.get('/', (req, res) => {
     res.send('Welcome to Colors App!');
 })
 
+// loclahost:4001/*
+app.get('*', (req, res) => {
+    res.status(404).send('Page not found');
+})
+
+
 
 module.exports = app;
