@@ -9,4 +9,4 @@ const getAllColors = async () => {
     }
 };
 
-module.exports = {};
+module.exports = { getAllColors };
