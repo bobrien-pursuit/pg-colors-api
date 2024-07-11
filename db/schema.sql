@@ -5,6 +5,6 @@ CREATE DATABASE colors_dev;
 
 CREATE TABLE colors (
     id SERIAL PRIMARY KEY,
-    name TEXT NOT NULL,
+    name VARCHAR(100) NOT NULL,
     is_favorite BOOLEAN
 );
