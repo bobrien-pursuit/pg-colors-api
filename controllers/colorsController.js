@@ -1,13 +1,10 @@
 const express = require('express');
 const colors = express.Router();
+const { getAllColors } = require("../queries/colors.js");
 
 
 // Index: localhost:4001/colors
-colors.get('/', (req, res) => {
-
-    res.json({ status: "ok"})
-
-})
+colors.get('/', async (req, res) => {});
 
 
 
