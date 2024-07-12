@@ -18,4 +18,11 @@ const getColor = async (id) => {
     } //end try/catch
 }; // end getColor
 
-module.exports = { getAllColors, getColor };
+const createColor = async (color) => {
+    try {
+    } catch (error) {
+      throw error;
+    } // end try/catch
+} //end createColor
+
+module.exports = { getAllColors, getColor, createColor };
