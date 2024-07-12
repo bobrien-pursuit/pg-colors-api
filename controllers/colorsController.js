@@ -1,7 +1,7 @@
 const express = require('express');
 const colors = express.Router();
 const { getAllColors, getColor, createColor } = require("../queries/colors.js");
-const { checkNam, checkBoolean } = require("../validations/checkColors.js")
+const { checkName, checkBoolean } = require("../validations/checkColors.js")
 
 
 // Index: localhost:4001/colors
