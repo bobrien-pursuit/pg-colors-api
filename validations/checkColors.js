@@ -1,5 +1,6 @@
 const checkName = (req, res, next) => {
-    if (req.body.name) {
+    const { name } = req.body;
+    if (name) {
         next();
     } else {
         res.status(400).json({ error: "Name is required."});
