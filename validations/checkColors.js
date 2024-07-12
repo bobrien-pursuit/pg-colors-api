@@ -6,4 +6,12 @@ const checkName = (req, res, next) => {
     } // end if/else
 }; //ends checkName()
 
-module.exports = { checkName };
+const checkBoolean = (req, res, next) => {
+    if (req.body.is_favorite) {
+        next();
+    } else {
+        res.status(400).json({ error: "is_favorite must be a boolean value"})
+    }
+} // checkBoolean
+
+module.exports = { checkName, checkBoolean };
