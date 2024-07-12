@@ -15,14 +15,18 @@ const getColor = async (id) => {
       return oneColor;
     } catch (error) {
       return error;
-    } //end try/catch
-}; // end getColor
+    } //end try/catch block
+}; // end getColor(id)
 
 const createColor = async (color) => {
     try {
+      const newColor = await db.one(
+        "INSERT INTO colors (name, is_favorite) VALUES($1, $2) RETURNING *;",
+        [colors.name, colors.is_favorite]
+      ); // end newColor declaration
     } catch (error) {
       throw error;
-    } // end try/catch
-} //end createColor
+    } // end try/catch block
+} //end createColor(color)
 
 module.exports = { getAllColors, getColor, createColor };
