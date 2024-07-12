@@ -14,4 +14,4 @@ const checkBoolean = (req, res, next) => {
     } // end if/else
 } // end checkBoolean()
 
-module.exports = { checkName, checkBoolean };
+module.exports = { checkName, checkBoolean }; // exports
