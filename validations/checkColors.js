@@ -7,7 +7,8 @@ const checkName = (req, res, next) => {
 }; //ends checkName()
 
 const checkBoolean = (req, res, next) => {
-        if (req.body.is_favorite == "false" || req.body.is_favorite == "true" || typeof req.body.is_favorite == "boolean"){
+    const { is_favorite } = req.body;
+        if (is_favorite == "false" || is_favorite == "true" || typeof is_favorite == "boolean"){
                             next();
     } else {
         res.status(400).json({ error: "is_favorite must be a boolean value"})
