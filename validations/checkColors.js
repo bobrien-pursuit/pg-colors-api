@@ -1,5 +1,9 @@
 const checkName = (req, res, next) => {
-    console.log("checking name...")
+    if (req.body.name) {
+        console.log("name is ok");
+    } else {
+        res.status(400).json({ error: "Name is required."});
+    } // end if/else
 }; //ends checkName()
 
 module.exports = { checkName };
