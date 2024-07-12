@@ -10,7 +10,12 @@ const getAllColors = async () => {
 };
 
 const getColor = async () => {
-
+    try {
+      const oneColor = await db.one("SELECT * FROM colors WHERE id=$1;", id);
+      return oneColor;
+    } catch (error) {
+      return error;
+    } //end try/catch
 }; // end getColor
 
 module.exports = { getAllColors, getColor };
