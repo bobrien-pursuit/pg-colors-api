@@ -6,8 +6,8 @@ const getAllColors = async () => {
         return allColors;
       } catch (error) {
         return error;
-    }
-};
+    } // end try/catch
+}; // end getAllColors
 
 const getColor = async () => {
     try {
