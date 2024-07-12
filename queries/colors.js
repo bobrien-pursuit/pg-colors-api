@@ -9,9 +9,9 @@ const getAllColors = async () => {
     } // end try/catch
 }; // end getAllColors
 
-const getColor = async () => {
+const getColor = async (id) => {
     try {
-      const oneColor = await db.one("SELECT * FROM colors WHERE id=$1;", id);
+      const oneColor = await db.one("SELECT * FROM colors WHERE id = $1;", id);
       return oneColor;
     } catch (error) {
       return error;
