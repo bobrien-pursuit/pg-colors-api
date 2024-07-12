@@ -22,8 +22,9 @@ const createColor = async (color) => {
     try {
       const newColor = await db.one(
         "INSERT INTO colors (name, is_favorite) VALUES($1, $2) RETURNING *;",
-        [colors.name, colors.is_favorite]
+        [color.name, color.is_favorite]
       ); // end newColor declaration
+      return newColor;
     } catch (error) {
       throw error;
     } // end try/catch block
