@@ -8,10 +8,11 @@ const checkName = (req, res, next) => {
 
 const checkBoolean = (req, res, next) => {
     if (req.body.is_favorite) {
-        next();
+        if (is_favorite == "false" || is_favorite == "true" || typeof is_favorite == "boolean")
+                            next();
     } else {
         res.status(400).json({ error: "is_favorite must be a boolean value"})
-    }
-} // checkBoolean
+    } // end if/else
+} // end checkBoolean()
 
 module.exports = { checkName, checkBoolean };

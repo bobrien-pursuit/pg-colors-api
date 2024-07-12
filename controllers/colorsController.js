@@ -26,7 +26,7 @@ colors.get('/:id', async (req, res) => {
 }); // end show route
 
 // Create: localhost:4001/colors
-colors.post('/', checkName, checkBoolean async (req, res) => {
+colors.post('/', checkName, checkBoolean, async (req, res) => {
     const color = await createColor(req.body);
     res.json(color);
 }); // end post route
