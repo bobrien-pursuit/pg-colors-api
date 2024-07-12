@@ -22,7 +22,7 @@ colors.get('/:id', async (req, res) => {
     } else {
         res.status(404).json({ error: "not found"});
     } // end if/else
-}) // end get
+}); // end get
 
 
 module.exports = colors;
