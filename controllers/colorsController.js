@@ -20,7 +20,7 @@ colors.get('/:id}', async (req, res) => {
     if (color) {
         res.status(200).json(color);
     } else {
-        res.status(500).json({ error: "server error"});
+        res.status(404).json({ error: "not found"});
     } // end if/else
 }) // end get
 
