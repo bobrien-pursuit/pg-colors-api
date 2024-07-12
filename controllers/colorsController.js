@@ -14,7 +14,7 @@ colors.get('/', async (req, res) => {
 }); // end get
 
 // Show: localhost:4001/colors/<id>
-colors.get('/:id}', async (req, res) => {
+colors.get('/:id', async (req, res) => {
     const { id } = req.params;
     const color = await getColor(id);
     if (color) {
