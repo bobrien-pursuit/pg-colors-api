@@ -1,6 +1,6 @@
 const express = require('express');
 const colors = express.Router();
-const { getAllColors } = require("../queries/colors");
+const { getAllColors, getColor } = require("../queries/colors");
 
 
 // Index: localhost:4001/colors
