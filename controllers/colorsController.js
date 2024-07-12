@@ -22,7 +22,13 @@ colors.get('/:id', async (req, res) => {
     } else {
         res.status(404).json({ error: "not found"});
     } // end if/else
-}); // end get
+}); // end show route
+
+// Create: localhost:4001/colors
+colors.post('/', async (req, res) => {
+    const color = await createColor(req.body);
+    res.json(color);
+}); // end post route
 
 
 module.exports = colors;
