@@ -1,6 +1,6 @@
 const express = require('express');
 const colors = express.Router();
-const { getAllColors, getColor, createColor } = require("../queries/colors.js");
+const { getAllColors, getColor, createColor, deleteColor } = require("../queries/colors.js");
 const { checkName, checkBoolean } = require("../validations/checkColors.js")
 
 
@@ -31,5 +31,16 @@ colors.post('/', checkName, checkBoolean, async (req, res) => {
     res.json(color);
 }); // end post route
 
+// DELETE: localhost:4001/colors<id>
+colors.delete('/:id', async (req, res) => {
+    const { id } =  req.params;
+    const deletedColor = await deleteColor(id);
+    if (deletedColor.id) {
+        res.status(200).json({ message: "Successfully deleted color."});
+    }
+    else {
+        res.status(404).json({ error: "Color not found."});
+    }
+})
 
 module.exports = colors;
