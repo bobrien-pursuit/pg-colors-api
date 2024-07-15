@@ -46,7 +46,6 @@ colors.delete('/:id', async (req, res) => {
 colors.put('/:id', checkName, checkBoolean, async (req, res) => {
     const { id } = req.params;
     const updatedColor = await updateColor(id, req.body);
-    res.status(200).json(updatedColor);
     if(updatedColor.id){
         res.status(200).json(updatedColor);
     } else {
