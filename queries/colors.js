@@ -32,7 +32,7 @@ const createColor = async (color) => {
 
 const deleteColor = async (id) => {
   try {
-    const deletedColor = await db.one("DELETE * FROM colors where ID=$1 RETURNING *", id);
+    const deletedColor = await db.one("DELETE FROM colors where ID=$1 RETURNING *", id);
     return deletedColor;
   } catch (error) {
     return error;
